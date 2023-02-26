@@ -7,5 +7,6 @@ fn main() {
     let rotated: Vec2 = Vec2::from_rotate(&my_vec2, &90.0); 
     
     my_vec2.rotate(&90.0);
+    
     dbg!(&my_vec2, &rotated);
 }
