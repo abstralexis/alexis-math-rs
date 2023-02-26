@@ -1,5 +1,5 @@
-pub use Vec;
 pub use crate::vectors::Vec2;
+pub use Vec;
 
 pub trait Matrix2Like {
     fn as_matrix2(&self) -> Matrix2;
@@ -7,13 +7,13 @@ pub trait Matrix2Like {
 
 #[derive(Debug)]
 pub struct Matrix2 {
-    matrix: Vec<Vec<f32>>
+    matrix: Vec<Vec<f32>>,
 }
 
 impl Matrix2Like for Matrix2 {
     fn as_matrix2(&self) -> Matrix2 {
         Matrix2 {
-            matrix: self.matrix.clone()
+            matrix: self.matrix.clone(),
         }
     }
 }
@@ -21,7 +21,7 @@ impl Matrix2Like for Matrix2 {
 impl Matrix2 {
     pub fn new_2d_zeroes(width: &usize, height: &usize) -> Self {
         Matrix2 {
-            matrix: vec![vec![0.0; *width]; *height]
+            matrix: vec![vec![0.0; *width]; *height],
         }
     }
 }
@@ -29,10 +29,7 @@ impl Matrix2 {
 impl Matrix2Like for Vec2 {
     fn as_matrix2(&self) -> Matrix2 {
         Matrix2 {
-            matrix: vec![
-                vec![self.x],
-                vec![self.y]
-            ]
+            matrix: vec![vec![self.x], vec![self.y]],
         }
     }
 }
