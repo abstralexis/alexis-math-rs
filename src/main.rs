@@ -1,6 +1,8 @@
 pub mod vectors;
 pub mod rounding;
+pub mod matrix;
 use vectors::*;
+use matrix::*;
 
 fn main() {
     let mut my_vec2: Vec2 = Vec2::new(1.0, 1.0);
@@ -14,4 +16,8 @@ fn main() {
     my_vec2.rotate(&-90.0);
     println!(".dot() {}", &my_vec2.dot(&rotated));
     println!("dot_product(): {}", Vec2::dot_product(&my_vec2, &rotated));
+    
+    let m: Matrix2 = Matrix2::new_2d_zeroes(&3, &5);
+    let v: Matrix2 = my_vec2.as_matrix2();
+    dbg!(&m, &v);
 }
