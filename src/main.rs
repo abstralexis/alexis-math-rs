@@ -1,4 +1,5 @@
-mod vectors;
+pub mod vectors;
+pub mod rounding;
 use vectors::Vec2;
 
 fn main() {
@@ -9,7 +10,7 @@ fn main() {
     my_vec2.rotate(&90.0);
     
     dbg!(&my_vec2, &rotated);
-    
+       
     my_vec2.rotate(&-90.0);
     println!(".dot() {}", &my_vec2.dot(&rotated));
     println!("dot_product(): {}", Vec2::dot_product(&my_vec2, &rotated));
