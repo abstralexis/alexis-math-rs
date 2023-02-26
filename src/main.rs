@@ -1,6 +1,6 @@
 pub mod vectors;
 pub mod rounding;
-use crate::vectors::*;
+use vectors::*;
 
 fn main() {
     let mut my_vec2: Vec2 = Vec2::new(1.0, 1.0);
