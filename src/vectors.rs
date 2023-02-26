@@ -47,6 +47,6 @@ impl Vec2 {
     
     pub fn dot_product(v1: &Vec2, v2: &Vec2) -> f32 {
         /* Returns the dot product of two Vec2s */
-        ((*v1).x * (*v2).y) + ((*v1).y * (*v2).y)
+        ((*v1).x * (*v2).x) + ((*v1).y * (*v2).y)
     }
 } 
