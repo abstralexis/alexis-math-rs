@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 pub use crate::vectors::Vec2;
 pub use Vec;
 
@@ -8,6 +10,33 @@ pub trait Matrix2Like {
 #[derive(Debug)]
 pub struct Matrix2 {
     matrix: Vec<Vec<f32>>,
+}
+
+impl Matrix2 {
+    pub fn transpose(&self) -> Matrix2 {
+        let mut matrix_t: Vec<Vec<f32>> = Vec::new();
+        (0..(self.matrix[0].len())).for_each(|i| {
+            let mut row_t: Vec<f32> = Vec::new();
+            for row in &self.matrix {
+                row_t.push(row[i]);
+            }
+            matrix_t.push(row_t);
+        });
+        Matrix2 { matrix: matrix_t }
+    }
+}
+
+impl Display for Matrix2 {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut display: String = String::new();
+        for row in &self.matrix {
+            display.push_str(
+                (row.iter().map(|x| format!("{} ", x)).collect::<String>() + "\n").as_str(),
+            )
+        }
+        display.pop();
+        write!(f, "{}", display)
+    }
 }
 
 impl Matrix2Like for Matrix2 {

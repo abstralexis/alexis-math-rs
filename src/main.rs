@@ -21,4 +21,8 @@ fn main() {
     let v: Matrix2 = my_vec2.as_matrix2();
     let u: Matrix2 = vec![3.0, 4.0].as_matrix2();
     dbg!(&m, &v, &u);
+
+    let t: Matrix2 = m.transpose();
+    println!("{}", &m);
+    println!("{}", &t);
 }
