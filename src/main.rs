@@ -19,5 +19,6 @@ fn main() {
 
     let m: Matrix2 = Matrix2::new_2d_zeroes(&3, &5);
     let v: Matrix2 = my_vec2.as_matrix2();
-    dbg!(&m, &v);
+    let u: Matrix2 = vec![3.0, 4.0].as_matrix2();
+    dbg!(&m, &v, &u);
 }

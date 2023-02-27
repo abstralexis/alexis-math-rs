@@ -33,3 +33,11 @@ impl Matrix2Like for Vec2 {
         }
     }
 }
+
+impl Matrix2Like for Vec<f32> {
+    fn as_matrix2(&self) -> Matrix2 {
+        Matrix2 {
+            matrix: vec![vec![self[0]], vec![self[1]]],
+        }
+    }
+}
